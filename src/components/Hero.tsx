@@ -20,7 +20,7 @@ function Hero() {
     return (
         <div >
             <Navbar />
-            <div className="flex flex-col items-center min-h-screenn">
+            <div className="flex flex-col items-center" style={{minHeight: '70vh'}}>
                 <HoverCard>
                     <HoverCardTrigger asChild>
                         <Button variant="link" className='font-serif'>@uprizingFaze</Button>

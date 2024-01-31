@@ -3,7 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 import { Button } from "@/components/ui/button"
 import {
@@ -34,21 +34,6 @@ export function Encripter() {
         resolver: zodResolver(FormSchema),
     })
 
-    const [scrollPosition, setScrollPosition] = useState(0);
-
-    const handleScroll = () => {
-        const position = window.pageYOffset;
-        setScrollPosition(position);
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
-
     function onSubmit(data: z.infer<typeof FormSchema>) {
         toast({
             title: "You submitted the following values:",
@@ -61,8 +46,8 @@ export function Encripter() {
     }
 
     return (
-        <div className={`flex justify-center items-center min-h-screen bg-transparent transform transition-transform duration-500 ease-in-out ${scrollPosition > 100 ? 'rotate-0' : 'rotate-12'}`}>
-            <div className="flex flex-col items-center bg-white bg-opacity-50 rounded-lg shadow-lg p-6 w-full max-w-2xl">
+        <div className="flex flex-col items-center bg-white bg-opacity-10 rounded-lg shadow-lg p-6 w-full max-w-2xl ">
+            <div className="flex flex-col items-center bg-black bg-opacity-50 rounded-lg shadow-lg p-6 w-full max-w-2xl">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
                         <FormField
@@ -79,7 +64,34 @@ export function Encripter() {
                                         />
                                     </FormControl>
                                     <FormDescription>
-                                        You can <span>@mention</span> other users and organizations.
+                                        You can <span>@mention</span> other users and uprizxin.
+                                    </FormDescription>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                        <Button variant="secondary">Submit</Button>
+                    </form>
+                </Form>
+            </div>
+            <div className="flex flex-col items-center bg-black bg-opacity-50 rounded-lg shadow-lg p-6 w-full max-w-2xl">
+                <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
+                        <FormField
+                            control={form.control}
+                            name="bio"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Bio</FormLabel>
+                                    <FormControl>
+                                        <Textarea
+                                            placeholder="Tell us a little bit about yourself"
+                                            className="resize-none"
+                                            {...field}
+                                        />
+                                    </FormControl>
+                                    <FormDescription>
+                                        You can <span>@mention</span> other users and uprizxin.
                                     </FormDescription>
                                     <FormMessage />
                                 </FormItem>

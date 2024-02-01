@@ -46,8 +46,13 @@ export function Encripter() {
     }
 
     return (
-        <div className="flex flex-col items-center bg-white bg-opacity-10 rounded-lg shadow-lg p-6 w-full max-w-2xl ">
-            <div className="flex flex-col items-center bg-black bg-opacity-50 rounded-lg shadow-lg p-6 w-full max-w-2xl">
+        <div className="flex flex-col items-center bg-white dark:bg-black bg-opacity-50 dark:bg-opacity-50 rounded-lg shadow-lg p-6 relative" style={{ marginLeft: '100px', marginRight: '100px', borderRadius: '8px', border: '1px solid rgba(0,0,0,0.2)' }}>
+        <div className="absolute top-2 left-2 flex space-x-1">
+            <div className="w-3 h-3 bg-red-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
+            <div className="w-3 h-3 bg-green-500 rounded-full"></div>
+        </div>
+        <div className="flex flex-col items-center bg-white dark:bg-black bg-opacity-50 dark:bg-opacity-50 rounded-lg shadow-lg p-6 w-full max-w-2xl">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
                         <FormField
@@ -74,7 +79,7 @@ export function Encripter() {
                     </form>
                 </Form>
             </div>
-            <div className="flex flex-col items-center bg-black bg-opacity-50 rounded-lg shadow-lg p-6 w-full max-w-2xl">
+        <div className="flex flex-col items-center bg-black bg-opacity-50 rounded-lg shadow-lg p-6 w-full max-w-2xl">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="w-full space-y-6">
                         <FormField

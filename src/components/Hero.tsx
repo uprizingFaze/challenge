@@ -50,23 +50,11 @@ function Hero() {
                 <h1 className="mx-4 mt-10 scroll-m-20 pb-2 text-5xl font-serif leading-relaxed tracking-tight transition-colors first:mt-0 text-center md:text-center sm:text-center">
                     The Ultimate Design System for <br /> Modern Web Encription
                 </h1>
-
-                <div className="fixed bottom-0 right-0 m-4">
-                    <div className="space-y-1">
-                        <h4 className="text-sm font-medium leading-none">Encriptador de texto</h4>
-                        <p className="text-sm text-muted-foreground">
-                            Primer challenge Oracle One + Alura Latam.
-                        </p>
-                    </div>
-                    <Separator className="my-4" />
-                    <div className="flex h-5 items-center space-x-4 text-sm">
-                        <div>Nicolas</div>
-                        <Separator orientation="vertical" />
-                        <div>Oracle</div>
-                        <Separator orientation="vertical" />
-                        <div>Alura</div>
-                    </div>
+                <div className="flex space-x-2">
+                    <Button className=' bg-indigo-600 hover:bg-blue-700'>Button</Button>
+                    <Button variant="outline">Button 2</Button>
                 </div>
+            
             </div>
         </div>
     )

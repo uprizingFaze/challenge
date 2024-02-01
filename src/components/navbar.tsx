@@ -19,8 +19,8 @@ export default function Navbar() {
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <Avatar>
-            <AvatarImage src="https://avatars.githubusercontent.com/u/111722885?v=4" alt="@shadcn" />
-            <AvatarFallback>CN</AvatarFallback>
+            <AvatarImage src="https://th.bing.com/th/id/OIG2.Ln.f39pMqyLsA7VFLno7?pid=ImgGn" alt="@shadcn" />
+            <AvatarFallback>EN</AvatarFallback>
           </Avatar>
           <h3 className=" text-2xl font-semibold tracking-tight">
             uprizing
